@@ -723,6 +723,14 @@ video {
   text-decoration-line: underline;
 }
 
+.opacity-0 {
+  opacity: 0;
+}
+
+.opacity-100 {
+  opacity: 1;
+}
+
 .outline {
   outline-style: solid;
 }
@@ -755,9 +763,41 @@ body {
   }
 }
 
-.hover\:bg-gray-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
+/* Fade-in animation */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation with different delays */
+
+#mobile-menu button,
+  #mobile-menu nav ul li:nth-child(1) a {
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.1s;
+}
+
+#mobile-menu nav ul li:nth-child(2) a {
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.2s;
+}
+
+#mobile-menu nav ul li:nth-child(3) a {
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.3s;
+}
+
+#mobile-menu nav ul li:nth-child(4) a {
+  animation: fadeIn 0.5s forwards;
+  animation-delay: 0.4s;
 }
 
 .hover\:text-gray-300:hover {
@@ -779,3 +819,4 @@ body {
     display: none;
   }
 }
+  
