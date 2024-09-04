@@ -5,11 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kamiye Oladipo</title>
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="animate.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body class="">
 
 
-    <nav id="nav" class="bg-black text-white p-4 flex justify-between items-center">
+    <nav id="nav" class="text-white p-4 flex justify-between items-center">
         <!-- Left: Social Media Links -->
         <div class="flex space-x-4">
           <a href="#" aria-label="Twitter">
@@ -24,7 +26,7 @@
       
         <!-- Center: Logo -->
         <div class="text-center">
-          <a href="#" class="text-2xl font-bold">Kamiye Oladipo</a>
+          <a href="#" class="wow fadeIn text-2xl font-bold">Kamiye <span>Oladipo</span></a>
         </div>
       
         <!-- Right: Navlinks -->
@@ -36,7 +38,7 @@
         </div>
       
         <!-- Mobile Menu Button -->
-        <div class="lg:hidden">
+        <div class="lg:hidden mt-2">
           <button id="menu-btn" class="focus:outline-none">
             <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
           </button>
@@ -44,21 +46,22 @@
       </nav>
       
       <!-- Mobile Menu -->
-<div id="mobile-menu" class="fixed top-0 left-0 w-1/2 h-full bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out">
-    <button id="close-menu-btn" class="p-4 opacity-0">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-      </svg>
-    </button>
-    <nav class="mt-10 space-y-4">
-      <ul>
-        <li><a href="#home" class="block px-4 py-2 opacity-0">Home</a></li>
-        <li><a href="#about" class="block px-4 py-2 opacity-0">About</a></li>
-        <li><a href="#portfolio" class="block px-4 py-2 opacity-0">Portfolio</a></li>
-        <li><a href="#contact" class="block px-4 py-2 opacity-0">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
+<div id="mobile-menu" class="fixed top-0 left-0 w-1/2 h-full bg-black text-white transform -translate-x-full transition-transform duration-300 ease-in-out z-50">
+  <button id="close-menu-btn" class="p-4 opacity-0">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+    </svg>
+  </button>
+  <nav class="mt-10 space-y-4">
+    <ul>
+      <li><a href="#home" class="block px-4 py-2 opacity-0">Home</a></li>
+      <li><a href="#about" class="block px-4 py-2 opacity-0">About</a></li>
+      <li><a href="#portfolio" class="block px-4 py-2 opacity-0">Portfolio</a></li>
+      <li><a href="#contact" class="block px-4 py-2 opacity-0">Contact</a></li>
+    </ul>
+  </nav>
+</div>
+
   
 
 
@@ -76,6 +79,14 @@
     
 
 
-<script src="script.js"></script>  
+<script src="script.js"></script> 
+<script src="wow.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  new WOW().init();
+</script>
+<script>
+  AOS.init();
+</script>
 </body>
 </html>

@@ -578,8 +578,20 @@ video {
   top: 0px;
 }
 
+.z-50 {
+  z-index: 50;
+}
+
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-3 {
+  margin-top: 0.75rem;
 }
 
 .block {
@@ -735,6 +747,18 @@ video {
   outline-style: solid;
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .transition-transform {
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -763,41 +787,49 @@ body {
   }
 }
 
-/* Fade-in animation */
+/* Slide-in from left with slower animation */
 
-@keyframes fadeIn {
+@keyframes slideInFromLeft {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateX(-30px);
   }
 
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
-/* Apply animation with different delays */
-
 #mobile-menu button,
-  #mobile-menu nav ul li:nth-child(1) a {
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.1s;
+#mobile-menu nav ul li a {
+  opacity: 0;
+  animation-fill-mode: forwards;
 }
 
-#mobile-menu nav ul li:nth-child(2) a {
-  animation: fadeIn 0.5s forwards;
+#mobile-menu.open button {
+  animation: slideInFromLeft 1s ease-in-out forwards;
   animation-delay: 0.2s;
 }
 
-#mobile-menu nav ul li:nth-child(3) a {
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.3s;
+#mobile-menu.open nav ul li:nth-child(1) a {
+  animation: slideInFromLeft 1s ease-in-out forwards;
+  animation-delay: 0.4s;
 }
 
-#mobile-menu nav ul li:nth-child(4) a {
-  animation: fadeIn 0.5s forwards;
-  animation-delay: 0.4s;
+#mobile-menu.open nav ul li:nth-child(2) a {
+  animation: slideInFromLeft 1s ease-in-out forwards;
+  animation-delay: 0.6s;
+}
+
+#mobile-menu.open nav ul li:nth-child(3) a {
+  animation: slideInFromLeft 1s ease-in-out forwards;
+  animation-delay: 0.8s;
+}
+
+#mobile-menu.open nav ul li:nth-child(4) a {
+  animation: slideInFromLeft 1s ease-in-out forwards;
+  animation-delay: 1s;
 }
 
 .hover\:text-gray-300:hover {
@@ -819,4 +851,3 @@ body {
     display: none;
   }
 }
-  
